@@ -3,53 +3,79 @@ import useStore from "@/store/cartStore";
 import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import useProductDialogSore from "@/store/product-dialog-store";
+import ProductDetail from "./dialogs/product-detail-dialog";
 
-type IProduct = {
+export type IProduct = {
   item_id: number;
   item_image: string;
   item_name: string;
   discounted_price: number;
+  original_price: number;
+  rating: number;
+  description:string;
 };
 export default function ProductCard({ product }: { product: IProduct }) {
   const { addToCart, cart, removeFromCart } = useStore();
-  const router = useRouter();
+  const { openDialog } = useProductDialogSore();
   const itemInCart = cart.find((item) => item.item_id === product.item_id);
   return (
     <>
       <div
-        onClick={() => router.push(`/product-detail/${product.item_id}`)}
-        className="border border-gray-400 rounded-lg py-3 flex flex-col gap-2 cursor-pointer"
+        onClick={() => openDialog(product)}
+        className="bg-white rounded-[10px] shadow-[0_1.95px_29.383px_0_rgba(224,224,236,0.40)] cursor-pointer"
       >
         {/* product image */}
-        <div className="relative w-[60%] aspect-square mx-auto">
+        <div className="relative h-[237px] mx-auto w-full">
           <Image
             src={product.item_image}
             alt="product-image"
             fill
-            className="object-cover rounded-md"
+            className="object-cover rounded-tl-[10px] rounded-tr-[10px]"
           />
         </div>
         {/* content */}
-        <div className="px-2">
-          <h3 className="text-sm font-semibold text-gray-700">
+        <div className="px-[25px] py-5 flex flex-col gap-2">
+          {/* item name */}
+          <h3 className="text-base font-semibold text-black">
             {product.item_name}
           </h3>
+          {/* original and discounted price */}
+          <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col gap-1.5">
+              <div className="flex items-center gap-2">
+                <span className="text-gray-500 text-base font-medium line-through">
+                  ₹{product.original_price}
+                </span>
+                <span className="text-xl font-semibold text-[#FF4A22]">
+                  ₹{product.discounted_price}
+                </span>
+              </div>
 
-          <div className="flex items-center justify-between mt-2">
-            <span className="text-lg font-bold text-green-600">
-              ₹{product.discounted_price}
-            </span>
-
+              <div className="flex gap-2 items-center">
+                <div className="text-[rgba(51,51,51,0.80)] text-sm font-medium">
+                  {product.rating}
+                </div>
+                <Rating
+                  style={{ maxWidth: 90 }}
+                  value={product.rating}
+                  readOnly
+                />
+              </div>
+            </div>
             {itemInCart ? (
-              <button className="flex flex-row items-center gap-1.5 cursor-pointer px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors">
+              <button className="text-sm flex flex-row items-center gap-1.5  cursor-pointer px-5 py-2.5 bg-[#FF4A22] text-white rounded-[25px]  transition-colors">
                 <Minus
                   className="size-4"
                   onClick={(e) => {
                     removeFromCart(itemInCart);
                     e.stopPropagation();
-                     toast.success("Item removed from cart.")
+                    toast.success("Item removed from cart.");
                   }}
                 />
                 <div className="text-white text-sm">{itemInCart.quantity}</div>
@@ -58,8 +84,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
                   onClick={(e) => {
                     addToCart(itemInCart);
                     e.stopPropagation();
-                    toast.success("Item added to cart.")
-
+                    toast.success("Item added to cart.");
                   }}
                 />
               </button>
@@ -68,9 +93,9 @@ export default function ProductCard({ product }: { product: IProduct }) {
                 onClick={(e) => {
                   addToCart({ ...product, quantity: 1 });
                   e.stopPropagation();
-                  toast.success("Item added to cart.")
+                  toast.success("Item added to cart.");
                 }}
-                className="cursor-pointer px-3 py-1 bg-green-500 text-white rounded-md hover:bg-green-600 transition-colors"
+                className="text-sm cursor-pointer px-5 py-2.5 bg-[#FF4A22] text-white rounded-[25px]   transition-colors"
               >
                 Add to Cart
               </button>
@@ -78,6 +103,8 @@ export default function ProductCard({ product }: { product: IProduct }) {
           </div>
         </div>
       </div>
+
+      <ProductDetail />
     </>
   );
 }

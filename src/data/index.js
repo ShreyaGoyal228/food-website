@@ -493,7 +493,7 @@ export const foodProducts = [
     discount: 0.03,
     in_stock: true,
     out_of_stock: false,
-    category: "Lunch",
+    category: "Ready Meals",
     description: "Soft naan bread stuffed with spiced cottage cheese",
     rating: 4.6,
     reviews: 267,

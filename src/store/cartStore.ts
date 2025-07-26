@@ -6,6 +6,9 @@ export type ICartItem = {
   item_name: string;
   discounted_price: number;
   quantity: number;
+  original_price: number;
+  rating: number;
+  description: string;
 };
 
 interface ICartStore {
