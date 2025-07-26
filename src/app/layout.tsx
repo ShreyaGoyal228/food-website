@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Food Delivery App",
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <div className="min-h-screen font-noto">{children}</div>
+        <div className="min-h-screen font-noto">
+          <Suspense fallback="Loading...">{children}</Suspense>
+        </div>
         <Toaster />
         <Footer />
       </body>
