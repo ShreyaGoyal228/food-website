@@ -6,7 +6,7 @@ export default function RecommendedFoodItems() {
   const categorySelected = searchParams.get("category");
   return (
     <>
-      <div className="mb-[66px] flex flex-col gap-6 ">
+      <div className="mb-8 md:mb-10 xl:mb-[66px] flex flex-col gap-6 ">
         <div className="text-black font-semibold text-2xl">
           {categorySelected == null
             ? "Recommended Food Items"

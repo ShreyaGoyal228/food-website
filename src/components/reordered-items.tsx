@@ -8,8 +8,8 @@ export default function ReorderedItems() {
   return (
     <>
       {categorySelected == null && (
-        <div className="mb-[66px] flex flex-col gap-6 ">
-          <div className="text-black font-semibold text-2xl">
+        <div className="mb-8 md:mb-10 xl:mb-[66px]  flex flex-col gap-4 md:gap-6 ">
+          <div className="text-black font-semibold text-lg md:text-xl xl:text-2xl">
             Our Reordered Items
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5">

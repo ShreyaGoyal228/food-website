@@ -18,7 +18,7 @@ export default function Cart() {
   }, 0);
   return (
     <>
-      <div className="relative h-[200px] w-full mb-10">
+      <div className="relative h-[180px] xl:h-[200px] w-full mb-10">
         <Image
           src={"/banner/cart.svg"}
           alt="cart-banner"
@@ -27,8 +27,12 @@ export default function Cart() {
         />
 
         <div className="absolute container mx-auto max-w-full top-[50%] transform -translate-y-1/2 left-0 flex flex-row items-center gap-[13px]">
-          <IoIosArrowBack className="size-8 text-white" />
-          <span className="text-white text-2xl font-medium">Checkout</span>
+          <Link href="/">
+            <IoIosArrowBack className="size-6 md:size-7 xl:size-8 text-white" />
+          </Link>
+          <span className="text-white text-base md:text-xl xl:text-2xl font-medium">
+            Checkout
+          </span>
         </div>
       </div>
 
@@ -67,7 +71,7 @@ export default function Cart() {
           </div>
         </>
       ) : (
-        <div className="flex flex-col gap-20 xl:flex-row xl:justify-between mx-auto max-w-full container">
+        <div className="flex flex-col gap-20 xl:flex-row xl:justify-between mx-auto max-w-full container mb-8 md:mb-10 xl:mb-[66px] ">
           <div className="basis-[50%]">
             <ol className="relative border-s border-dotted border-black">
               <li className="mb-10 ms-11">

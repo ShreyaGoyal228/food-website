@@ -18,7 +18,7 @@ export type IProduct = {
   discounted_price: number;
   original_price: number;
   rating: number;
-  description:string;
+  description: string;
 };
 export default function ProductCard({ product }: { product: IProduct }) {
   const { addToCart, cart, removeFromCart } = useStore();
@@ -31,7 +31,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
         className="bg-white rounded-[10px] shadow-[0_1.95px_29.383px_0_rgba(224,224,236,0.40)] cursor-pointer"
       >
         {/* product image */}
-        <div className="relative h-[237px] mx-auto w-full">
+        <div className="relative h-[180px] md:h-[237px] mx-auto w-full">
           <Image
             src={product.item_image}
             alt="product-image"
@@ -40,7 +40,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
           />
         </div>
         {/* content */}
-        <div className="px-[25px] py-5 flex flex-col gap-2">
+        <div className="px-2.5 md:px-[25px] py-4 md:py-5 flex flex-col gap-2">
           {/* item name */}
           <h3 className="text-base font-semibold text-black">
             {product.item_name}
@@ -49,16 +49,16 @@ export default function ProductCard({ product }: { product: IProduct }) {
           <div className="flex flex-row justify-between items-center">
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center gap-2">
-                <span className="text-gray-500 text-base font-medium line-through">
+                <span className="text-gray-500 text-sm md:text-base font-medium line-through">
                   ₹{product.original_price}
                 </span>
-                <span className="text-xl font-semibold text-[#FF4A22]">
+                <span className="text-base md:text-xl font-semibold text-[#FF4A22]">
                   ₹{product.discounted_price}
                 </span>
               </div>
 
               <div className="flex gap-2 items-center">
-                <div className="text-[rgba(51,51,51,0.80)] text-sm font-medium">
+                <div className="text-[rgba(51,51,51,0.80)] text-xs md:text-sm font-medium">
                   {product.rating}
                 </div>
                 <Rating
@@ -69,7 +69,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
               </div>
             </div>
             {itemInCart ? (
-              <button className="text-sm flex flex-row items-center gap-1.5  cursor-pointer px-5 py-2.5 bg-[#FF4A22] text-white rounded-[25px]  transition-colors">
+              <button className="text-sm flex flex-row items-center gap-1.5  cursor-pointer px-5 py-2 md:py-2.5 bg-[#FF4A22] text-white rounded-[25px]  transition-colors">
                 <Minus
                   className="size-4"
                   onClick={(e) => {
@@ -95,7 +95,7 @@ export default function ProductCard({ product }: { product: IProduct }) {
                   e.stopPropagation();
                   toast.success("Item added to cart.");
                 }}
-                className="text-sm cursor-pointer px-5 py-2.5 bg-[#FF4A22] text-white rounded-[25px]   transition-colors"
+                className="text-sm cursor-pointer px-5 py-2 md:py-2.5 bg-[#FF4A22] text-white rounded-[25px]   transition-colors"
               >
                 Add to Cart
               </button>

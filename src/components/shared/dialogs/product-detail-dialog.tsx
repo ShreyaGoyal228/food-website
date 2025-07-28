@@ -21,9 +21,9 @@ export default function ProductDetail() {
   return (
     <>
       <Dialog open={isOpen} onOpenChange={() => closeDialog()}>
-        <DialogContent className="bg-white max-h-screen">
-          <div className="p-[15px] ">
-            <div className="relative h-[331px] w-full">
+        <DialogContent className="bg-white max-h-screen overflow-y-auto">
+          <div className="p-2.5 md:p-[12px] xl:p-[15px] ">
+            <div className="relative h-[250px] lg:h-[331px] w-full">
               <Image
                 src={productDetail.item_image}
                 alt="product-image"
@@ -32,19 +32,19 @@ export default function ProductDetail() {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-3 px-[35px] pb-[35px]">
+          <div className="flex flex-col gap-3 px-5 pb-5 md:px-[25px] md:pb-[25px] lg:px-[35px] lg:pb-[35px]">
             {/* item name */}
-            <h3 className="text-xl font-semibold text-black">
+            <h3 className="text-base lg:text-xl font-semibold text-black">
               {productDetail.item_name}
             </h3>
             {/* original and discounted price */}
             <div className="flex flex-row justify-between items-center">
               <div className="flex flex-col gap-1.5">
-                <div className="flex items-center gap-2">
-                  <span className="text-gray-500 text-xl font-medium line-through">
+                <div className="flex items-center gap-1.5 lg:gap-2">
+                  <span className="text-gray-500 text-base lg:text-xl font-medium line-through">
                     ₹{productDetail.original_price}
                   </span>
-                  <span className="text-2xl font-semibold text-[#FF4A22]">
+                  <span className="text-base md:text-xl lg:text-2xl font-semibold text-[#FF4A22]">
                     ₹{productDetail.discounted_price}
                   </span>
                 </div>
@@ -105,7 +105,7 @@ export default function ProductDetail() {
           </div>
           <DialogFooter className="sm:justify-start">
             <DialogClose asChild>
-              <div className="absolute top-[30px] right-[32px] size-9 cursor-pointer">
+              <div className="absolute right-6 top-6 md:top-[30px] md:right-[32px] size-6 md:size-8 xl:size-9 cursor-pointer">
                 <Image
                   src={"/icons/cross.svg"}
                   alt="cross-icon"

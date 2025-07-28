@@ -8,9 +8,9 @@ export default function Home() {
     <>
       {/* whats on your mind */}
       <div className="container max-w-full mx-auto">
-        <div className="flex flex-col gap-[20px] my-[66px]">
+        <div className="flex flex-col gap-[20px] my-8 md:my-10 xl:my-[66px]">
           <div className="flex flex-row items-center justify-between">
-            <div className="text-[#202020] text-xl font-bold">
+            <div className="text-[#202020] text-base md:text-xl font-bold">
               What’s on your mind?
             </div>
             <ClearFilter />

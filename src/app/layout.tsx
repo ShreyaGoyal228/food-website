@@ -17,13 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="ovetflow-x-hidden">
         <Navbar />
         <div className="min-h-screen font-noto">
           <Suspense fallback="Loading...">{children}</Suspense>
         </div>
         <Toaster />
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

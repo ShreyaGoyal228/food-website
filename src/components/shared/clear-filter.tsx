@@ -14,7 +14,7 @@ export default function ClearFilter() {
     <>
       <div
         onClick={() => handleClearFilters()}
-        className="cursor-pointer text-[#FF4A22] text-base font-normal"
+        className="cursor-pointer text-[#FF4A22] text-sm md:text-base font-normal"
       >
         Clear filter
       </div>

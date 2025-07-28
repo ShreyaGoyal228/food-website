@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 const categories = [
@@ -18,12 +19,12 @@ const categories = [
     name: "Fresh Produce",
   },
   {
-    img: "/categories/meat-and-seafood.jpg",
-    name: "Meat & Seafood",
-  },
-  {
     img: "/categories/bakery.jpg",
     name: "Bakery",
+  },
+  {
+    img: "/categories/meat-and-seafood.jpg",
+    name: "Meat & Seafood",
   },
   {
     img: "/categories/frozen-food.jpg",
@@ -49,6 +50,7 @@ const categories = [
 export default function CategoriesCarousel() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 1024px)");
   const selectedCategory = searchParams.get("category");
 
   const handleSetSearchParms = (category: string) => {
@@ -70,9 +72,9 @@ export default function CategoriesCarousel() {
             <CarouselItem
               onClick={() => handleSetSearchParms(item.name)}
               key={index}
-              className="cursor-pointer basis-[35%] md:basis-[27%] lg:basis-[20%] xl:basis-[15%] 2xl:basis-[13.2%] flex flex-col items-center gap-[15px]erftk /"
+              className="cursor-pointer basis-[30%] md:basis-[22%] lg:basis-[17%] xl:basis-[15%] 2xl:basis-[13.2%] flex flex-col items-center gap-[7px] md:gap-2.5 xl:gap-[15px] "
             >
-              <div className="relative w-[116px] aspect-square">
+              <div className="relative w-[57px] md:w-[95px] xl:w-[116px] aspect-square">
                 <Image
                   src={item.img}
                   alt=""
@@ -84,14 +86,18 @@ export default function CategoriesCarousel() {
                   } `}
                 />
               </div>
-              <div className="text-black text-base font-medium">
+              <div className="text-black text-sm md:text-base font-medium text-center ">
                 {item.name}
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {!isSmallDevice && (
+          <>
+            <CarouselPrevious />
+            <CarouselNext />
+          </>
+        )}
       </Carousel>
     </>
   );
