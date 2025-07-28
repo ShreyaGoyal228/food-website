@@ -38,16 +38,16 @@ export default function Footer() {
             {/* icons */}
           </div>
 
-<div className="flex flex-col items-center gap-[27px]">
-          <div className="text-sm lg:text-base font-normal flex items-center gap-2.5">
-            Contact : <span className="font-bold">+91 1234567899</span>
-          </div>
+          <div className="flex flex-col items-center gap-[27px]">
+            <div className="text-sm lg:text-base font-normal flex items-center gap-2.5">
+              Contact : <span className="font-bold">+91 1234567899</span>
+            </div>
 
-          <div className="flex flex-row gap-[30px] lg:hidden items-center">
-            <FiFacebook className="size-5 lg:size-6 hover:scale-[1.06] transition-all duration-300" />
-            <IoLogoInstagram className="size-5 lg:size-6 hover:scale-[1.06] transition-all duration-300" />
-            <TbBrandTwitter className="size-5 lg:size-6 hover:scale-[1.06] transition-all duration-300" />
-          </div>
+            <div className="flex flex-row gap-[30px] lg:hidden items-center">
+              <FiFacebook className="size-5 lg:size-6 hover:scale-[1.06] transition-all duration-300" />
+              <IoLogoInstagram className="size-5 lg:size-6 hover:scale-[1.06] transition-all duration-300" />
+              <TbBrandTwitter className="size-5 lg:size-6 hover:scale-[1.06] transition-all duration-300" />
+            </div>
           </div>
         </div>
       </div>

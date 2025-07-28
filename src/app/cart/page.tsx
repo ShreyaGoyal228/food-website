@@ -38,11 +38,11 @@ export default function Cart() {
 
       {cart.length == 0 ? (
         <>
-          <div className="flex flex-col items-center gap-5">
-            <div className="relative p-6 rounded-full bg-[rgba(255,74,34,0.07)]">
-              <div className="relative p-10 rounded-full bg-[rgba(255,211,201,0.53)]">
+          <div className="container max-w-full mx-auto flex flex-col items-center gap-3 md:gap-5 mb-8">
+            <div className="relative p-4 md:p-6 rounded-full bg-[rgba(255,74,34,0.07)]">
+              <div className="relative p-6 md:p-8 xl:p-10 rounded-full bg-[rgba(255,211,201,0.53)]">
                 <div className="absolute inset-0 border border-[rgba(255,74,34,0.7)] rounded-full animate-ping"></div>
-                <div className="relative w-[70px] aspect-square">
+                <div className="relative w-10 md:w-[50px] xl:w-[70px] aspect-square">
                   <Image
                     src={"/icons/cart-off.svg"}
                     alt="cart-off-icon"
@@ -54,16 +54,16 @@ export default function Cart() {
             </div>
             <div className="flex flex-col gap-[30px] items-center">
               <div className="flex flex-col gap-2 items-center">
-                <div className="text-center text-2xl text-black font-bold">
+                <div className="text-center text-base md:text-xl xl:text-2xl text-black font-bold">
                   Your cart is empty
                 </div>
-                <div className="text-[#808080] text-sm font-normal">
+                <div className="text-[#808080] text-sm font-normal text-center">
                   Looks like you haven’t added anything to your cart yet.
                 </div>
               </div>
               <Link
                 href="/"
-                className="text-white bg-[#16A34A] hover:bg-[#17B35A] hover:scale-[1.05] transition-transform duration-800 ease-in-out py-2 px-[25px] text-lg font-medium rounded-lg"
+                className="text-white bg-[#16A34A] hover:bg-[#17B35A] hover:scale-[1.05] transition-transform duration-800 ease-in-out py-2 px-[25px] text-sm md:text-base xl:text-lg font-medium rounded-lg"
               >
                 Continue Shopping
               </Link>
