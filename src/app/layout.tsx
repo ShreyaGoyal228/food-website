@@ -23,7 +23,7 @@ export default function RootLayout({
           <Suspense fallback="Loading...">{children}</Suspense>
         </div>
         <Toaster />
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
