@@ -6,8 +6,8 @@ import ClearFilter from "@/components/shared/clear-filter";
 export default function Home() {
   return (
     <>
-      {/* whats on your mind */}
-      <div className="container max-w-full mx-auto">
+      <div className="container max-w-full mx-auto min-h-screen">
+        {/* whats on your mind */}
         <div className="flex flex-col gap-[20px] my-8 md:my-10 xl:my-[66px]">
           <div className="flex flex-row items-center justify-between">
             <div className="text-[#202020] text-base md:text-xl font-bold">
@@ -19,7 +19,6 @@ export default function Home() {
         </div>
         {/* reordered food items */}
         <ReorderedItems />
-
         {/* Recommended Food Items */}
         <RecommendedFoodItems />
       </div>

@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="ovetflow-x-hidden">
         <Navbar />
-        <div className="min-h-screen font-noto">
+        <div className="font-noto">
           <Suspense fallback="Loading...">{children}</Suspense>
         </div>
         <Toaster />

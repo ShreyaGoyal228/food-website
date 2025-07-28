@@ -38,7 +38,7 @@ export default function Cart() {
 
       {cart.length == 0 ? (
         <>
-          <div className="container max-w-full mx-auto flex flex-col items-center gap-3 md:gap-5 xl:mb-8">
+          <div className="container max-w-full mx-auto flex flex-col items-center gap-3 md:gap-5 mb-8">
             <div className="relative p-4 md:p-6 rounded-full bg-[rgba(255,74,34,0.07)]">
               <div className="relative p-6 md:p-8 xl:p-10 rounded-full bg-[rgba(255,211,201,0.53)]">
                 <div className="absolute inset-0 border border-[rgba(255,74,34,0.7)] rounded-full animate-ping"></div>
