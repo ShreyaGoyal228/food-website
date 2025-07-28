@@ -13,15 +13,14 @@ export default function CartCard({
   item: ICartItem;
   itemNumber: number;
 }) {
-  const router = useRouter();
   const { cart, removeFromCart, addToCart, deleteFromCart } = useStore();
   const { openDialog } = useProductDialogSore();
   return (
     <>
       <div>
-        <div className="flex flex-row justify-between items-center mb-[38px]">
-          <div className="flex flex-row gap-5">
-            <div className="relative w-[82px] aspect-square">
+        <div className="flex flex-row justify-between items-center ">
+          <div className="flex flex-row gap-5 ">
+            <div className="relative w-[60px] md:w-[72px] xl:w-[82px] aspect-square">
               <Image
                 src={item.item_image}
                 alt="product-image"
@@ -30,26 +29,26 @@ export default function CartCard({
               />
             </div>
             <div className="flex flex-col gap-1 items-start">
-              <div className="text-[#202020] text-lg font-medium">
+              <div className="text-[#202020] text-sm md:text-base xl:text-lg font-medium">
                 {item.item_name}
               </div>
-              <div className="text-[#808080] text-lg font-normal ">
+              <div className="text-[#808080] text-sm md:text-base xl:text-lg font-normal ">
                 ₹{item.discounted_price}
               </div>
             </div>
           </div>
-          <button className="text-sm flex flex-row items-center gap-5  cursor-pointer py-2.5  ">
+          <button className="text-sm flex flex-row items-center gap-3 xl:gap-5  cursor-pointer py-2.5  ">
             <Minus
-              className="size-[16px]"
+              className="size-2.5 md:size-[12px] xl:size-[16px]"
               onClick={(e) => {
                 removeFromCart(item);
                 e.stopPropagation();
                 toast.success("Item removed from cart.");
               }}
             />
-            <div className="text-black text-base">{item.quantity}</div>
+            <div className="text-black text-sm xl:text-base">{item.quantity}</div>
             <Plus
-              className="size-[16px]"
+              className="size-2.5 md:size-[12px] xl:size-[16px]"
               onClick={(e) => {
                 addToCart(item);
                 e.stopPropagation();

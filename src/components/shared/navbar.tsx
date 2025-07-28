@@ -36,7 +36,7 @@ export default function Navbar() {
               <Link href="/cart">
                 <BsHandbag className="size-[18px] lg:size-[20px]" />
               </Link>
-              <div className="flex items-center justify-center absolute -top-2 -right-[14px] md:-right-[17px] size-[17px] md:size-[19px] bg-[#FF4A22] rounded-full text-white text-[10px] font-semibold">
+              <div className="flex items-center justify-center absolute -top-2 -right-[13px] md:-right-[17px] size-[17px] md:size-[19px] bg-[#FF4A22] rounded-full text-white text-[10px] font-semibold">
                 {cartItems}
               </div>
             </div>
