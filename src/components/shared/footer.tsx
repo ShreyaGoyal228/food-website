@@ -15,7 +15,7 @@ export default function Footer() {
           >
             <div className="relative aspect-square w-[150px] h-[44px]">
               <Image
-                src={"/logo.svg"}
+                src={"/logo-footer.svg"}
                 alt="food-website-logo"
                 fill
                 className="object-contain"

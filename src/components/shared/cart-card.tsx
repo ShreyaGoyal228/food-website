@@ -37,18 +37,20 @@ export default function CartCard({
               </div>
             </div>
           </div>
-          <button className="text-sm flex flex-row items-center gap-3 xl:gap-5  cursor-pointer py-2.5  ">
+          <button className="text-sm flex flex-row items-center gap-2 xl:gap-5  cursor-pointer py-2.5  ">
             <Minus
-              className="size-2.5 md:size-[12px] xl:size-[16px]"
+              className="size-[14px] xl:size-[16px]"
               onClick={(e) => {
                 removeFromCart(item);
                 e.stopPropagation();
                 toast.success("Item removed from cart.");
               }}
             />
-            <div className="text-black text-sm xl:text-base">{item.quantity}</div>
+            <div className="text-black text-sm xl:text-base">
+              {item.quantity}
+            </div>
             <Plus
-              className="size-2.5 md:size-[12px] xl:size-[16px]"
+              className="size-[14px] xl:size-[16px]"
               onClick={(e) => {
                 addToCart(item);
                 e.stopPropagation();

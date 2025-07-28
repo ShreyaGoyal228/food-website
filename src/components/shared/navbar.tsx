@@ -20,7 +20,7 @@ export default function Navbar() {
             >
               <div className="relative w-[115px] h-[34px] md:w-[150px] md:h-[44.45px]">
                 <Image
-                  src={"/logo.svg"}
+                  src={"/logo-header.svg"}
                   alt="food-website-logo"
                   fill
                   className="object-contain"
