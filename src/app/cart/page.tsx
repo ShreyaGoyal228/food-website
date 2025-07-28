@@ -121,16 +121,18 @@ export default function Cart() {
             </ol>
           </div>
 
-          <div className="flex flex-col gap-10 basis-[40%] xl:pl-10 xl:border-s-[0.953px] xl:border-[#B5B5B5]">
+          <div className="flex flex-col gap-6 md:gap-8 basis-[40%] xl:pl-10 xl:border-s-[0.953px] xl:border-[#B5B5B5]">
             {/* cart-header */}
             <div className="flex items-center justify-between">
-              <div className="text-[#202020] text-xl xl:text-2xl font-medium">Cart</div>
+              <div className="text-[#202020] text-xl xl:text-2xl font-medium">
+                Cart
+              </div>
               <div className="text-[#202020] text-base xl:text-lg font-normal">
                 {cartItemsSize} items
               </div>
             </div>
             {/* cart-cards */}
-            <div className=" bg-white rounded-md flex flex-col gap-[38px]">
+            <div className=" bg-white rounded-md flex flex-col gap-5">
               {cart.map((item, index) => (
                 <CartCard key={index} item={item} itemNumber={index + 1} />
               ))}
@@ -155,7 +157,9 @@ export default function Cart() {
             {/* subtotal */}
             <div className="flex flex-row justify-between">
               <div className="flex flex-col gap-1.5">
-                <div className="text-black text-base md:text-xl xl:text-2xl font-medium">SubTotal</div>
+                <div className="text-black text-base md:text-xl xl:text-2xl font-medium">
+                  SubTotal
+                </div>
                 <div className="text-[#808080] text-xs md:text-sm font-normal">
                   Extra charges may apply
                 </div>

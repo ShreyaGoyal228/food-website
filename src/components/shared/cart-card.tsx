@@ -18,7 +18,7 @@ export default function CartCard({
   return (
     <>
       <div>
-        <div className="flex flex-row justify-between items-center ">
+        <div className="flex flex-row justify-between items-center mb-4">
           <div className="flex flex-row gap-5 ">
             <div className="relative w-[60px] md:w-[72px] xl:w-[82px] aspect-square">
               <Image
