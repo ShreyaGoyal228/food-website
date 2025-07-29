@@ -4,6 +4,7 @@ import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import { Toaster } from "@/components/ui/sonner";
 import { Suspense } from "react";
+import PageSkeleton from "@/components/skeleton/page-skeleton";
 
 export const metadata: Metadata = {
   title: "Food Delivery App",
@@ -20,7 +21,7 @@ export default function RootLayout({
       <body className="ovetflow-x-hidden">
         <Navbar />
         <div className="font-noto">
-          <Suspense fallback="Loading...">{children}</Suspense>
+          <Suspense fallback={<PageSkeleton />}>{children}</Suspense>
         </div>
         <Toaster />
         <Footer />
