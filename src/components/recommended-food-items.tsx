@@ -6,13 +6,13 @@ export default function RecommendedFoodItems() {
   const categorySelected = searchParams.get("category");
   return (
     <>
-      <div className="mb-8 md:mb-10 xl:mb-[66px] flex flex-col gap-6 ">
-        <div className="text-black font-semibold text-lg md:text-xl xl:text-2xl">
-          {categorySelected == null
-            ? "Recommended Food Items"
-            : categorySelected}
+      <div className="container max-w-full mx-auto py-10 md:py-[50px]">
+        <div className="flex flex-col gap-6 ">
+          <div className="text-black font-semibold text-lg md:text-xl xl:text-2xl">
+            {categorySelected == null ? "Food Items" : categorySelected}
+          </div>
+          <AllProducts />
         </div>
-        <AllProducts />
       </div>
     </>
   );

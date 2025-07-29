@@ -10,7 +10,7 @@ export default function Navbar() {
   }, 0);
   return (
     <>
-      <div className="sticky top-0 z-10 bg-white shadow-[0px_2px_31.8px_0px_rgba(0,0,0,0.06)]">
+      <div className="sticky top-0 z-20 bg-white shadow-[0px_2px_31.8px_0px_rgba(0,0,0,0.06)]">
         <div className="container max-w-full mx-auto py-5 lg:py-[25px] shadow-md">
           <div className="flex justify-between items-center">
             {/* logo */}

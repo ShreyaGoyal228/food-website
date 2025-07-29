@@ -6,9 +6,9 @@ import ClearFilter from "@/components/shared/clear-filter";
 export default function Home() {
   return (
     <>
-      <div className="container max-w-full mx-auto min-h-screen">
+      <div className="container max-w-full mx-auto">
         {/* whats on your mind */}
-        <div className="flex flex-col gap-[20px] my-8 md:my-10 xl:my-[66px]">
+        <div className="flex flex-col gap-[20px] mb-5 md:mb-[34px] mt-8 md:mt-10 xl:mt-[66px]">
           <div className="flex flex-row items-center justify-between">
             <div className="text-[#202020] text-base md:text-xl font-bold">
               What’s on your mind?
@@ -17,11 +17,11 @@ export default function Home() {
           </div>
           <CategoriesCarousel />
         </div>
-        {/* reordered food items */}
-        <ReorderedItems />
-        {/* Recommended Food Items */}
-        <RecommendedFoodItems />
       </div>
+      {/* reordered food items */}
+      <ReorderedItems />
+      {/* Recommended Food Items */}
+      <RecommendedFoodItems />
     </>
   );
 }
