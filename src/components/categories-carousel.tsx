@@ -75,9 +75,14 @@ export default function CategoriesCarousel() {
   }, [api]);
 
   const handleSetSearchParms = (category: string) => {
-    const params = new URLSearchParams();
+    const params = new URLSearchParams(searchParams.toString());
+    if (params.get("category") === category) {
+      params.delete("category");
+    } else {
+      params.delete("category");
+      params.append("category", category);
+    }
     // params.delete("category");
-    params.append("category", category);
     router.push(`?${params.toString()}`, { scroll: false });
   };
 
