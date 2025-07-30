@@ -1,6 +1,7 @@
 "use client";
 import AllProducts from "@/components/all-products";
 import { useSearchParams } from "next/navigation";
+import Filters from "./shared/filters/filter";
 export default function RecommendedFoodItems() {
   const searchParams = useSearchParams();
   const categorySelected = searchParams.get("category");
@@ -11,6 +12,7 @@ export default function RecommendedFoodItems() {
           <div className="text-black font-semibold text-lg md:text-xl xl:text-2xl">
             {categorySelected == null ? "Food Items" : categorySelected}
           </div>
+          <Filters />
           <AllProducts />
         </div>
       </div>
