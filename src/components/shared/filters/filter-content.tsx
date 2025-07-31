@@ -5,7 +5,7 @@ export default function FilterContent() {
   return (
     <>
       <Tabs defaultValue="sort" className="flex flex-row ">
-        <TabsList className="bg-[rgb(248,248,248)] w-[40%] border-r-[2px] border-[#E9E9E9] flex flex-col gap-1.5 items-start pb-20">
+        <TabsList className="bg-[rgb(248,248,248)] w-[40%] border-r-[2px] border-[#E9E9E9] flex flex-col gap-1.5 items-start pb-24 lg:pb-20">
           <TabsTrigger value="sort" className="mt-2 py-3">
             Sort
           </TabsTrigger>
@@ -19,7 +19,10 @@ export default function FilterContent() {
         <div className="px-4 lg:px-10">
           <TabsContent value="sort" className="mt-4">
             <div className="text-sm lg:text-base font-medium mb-3">SORT BY</div>
-            <RadioGroup defaultValue="default" className="flex flex-col gap-3">
+            <RadioGroup
+              defaultValue="default"
+              className="flex flex-col gap-4 lg:gap-3"
+            >
               <div className="flex items-center gap-3">
                 <RadioGroupItem value="default" id="r1" />
                 <Label htmlFor="r1" className="">

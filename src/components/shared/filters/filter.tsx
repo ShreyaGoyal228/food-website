@@ -103,7 +103,7 @@ export default function Filters() {
             </SheetHeader>
             <FilterContent />
             <div className="h-[2px] bg-[#E9E9E9] w-full"></div>
-            <SheetFooter className="flex flex-row gap-4 justify-end pr-2 py-4">
+            <SheetFooter className="flex flex-row gap-6 lg:gap-4 justify-end pr-2 py-4">
               <SheetClose>
                 <div className="absolute right-6 top-6 md:top-4 md:right-3 size-6 md:size-8 xl:size-6 cursor-pointer">
                   <Image
@@ -116,11 +116,11 @@ export default function Filters() {
               </SheetClose>
               <button
                 onClick={() => setOpenSheet(false)}
-                className="text-[#FF4A22] text-base font-normal bg-white"
+                className="text-[#FF4A22] text-sm font-normal bg-white"
               >
                 Clear Filters
               </button>
-              <button className="text-white text-base font-normal py-[8px] px-[40.5px] bg-[#FF4A22] rounded-[33px]">
+              <button className="text-white text-sm font-normal py-[8px] px-[40.5px] bg-[#FF4A22] rounded-[33px]">
                 Apply
               </button>
             </SheetFooter>
