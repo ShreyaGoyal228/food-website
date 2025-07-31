@@ -20,14 +20,6 @@ export default function ReorderedItems() {
     <>
       {categorySelected == null && (
         <div className="py-[45px] md:py-[60px] xl:py-[70px] bg-[#F8F8F8]">
-          {/* <div className="absolute inset-0 w-full h-full">
-            <Image
-              src={"/banner/reordered-food-items.svg"}
-              alt="reordered-food-items"
-              fill
-              className="object-cover"
-            />
-          </div> */}
           <div className="relative mb-6 md:mb-8 xl:mb-10  flex flex-col gap-4 md:gap-6 container max-w-full mx-auto">
             <div className="flex flex-row justify-between">
               <div className="text-black font-semibold text-lg md:text-xl xl:text-2xl">

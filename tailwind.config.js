@@ -12,10 +12,20 @@ module.exports = {
           transform: "scale(1.4)",
           opacity: 0,
         },
+        "slide-out-to-bottom": {
+          "0%": { transform: "translateY(0)", opacity: "1" },
+          "100%": { transform: "translateY(100%)", opacity: "0" },
+        },
+        "slide-in-from-bottom": {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
       },
     },
     animation: {
       ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
+       "slide-in-from-bottom": "slide-in-from-bottom 300ms ease-out",
+        "slide-out-to-bottom": "slide-out-to-bottom 300ms ease-in",
     },
     screens: {
       sm: "425px",
