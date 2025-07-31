@@ -11,7 +11,7 @@ export default function SearchBar() {
   const [value, setValue] = useState<string>("");
 
   //   custom-debounce-hook
-  const debounceTerm = useDebounce(value, 200);
+  const debounceTerm = useDebounce(value, 300);
 
   const handleValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -19,20 +19,21 @@ export default function SearchBar() {
 
   useEffect(() => {
     const params = new URLSearchParams(searchParams.toString());
-    if (debounceTerm) {
+    if (debounceTerm != "") {
       params.set("search", debounceTerm);
+      router.push(`?${params.toString()}`, { scroll: false });
+
+      const scrollTimeout = setTimeout(() => {
+        const section = document.getElementById("all-products");
+        section?.scrollIntoView({ behavior: "smooth" });
+      }, 500);
+
+      return () => clearTimeout(scrollTimeout);
     } else {
       params.delete("search");
+      router.push(`?${params.toString()}`, { scroll: false });
     }
-    router.push(`?${params.toString()}`, { scroll: false });
-
     // scroll to products after a short delay
-    const scrollTimeout = setTimeout(() => {
-      const section = document.getElementById("all-products");
-      section?.scrollIntoView({ behavior: "smooth" });
-    }, 500);
-
-    return () => clearTimeout(scrollTimeout);
   }, [debounceTerm]);
 
   return (
