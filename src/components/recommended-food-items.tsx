@@ -40,7 +40,7 @@ export default function RecommendedFoodItems() {
             />
           </div>
         </div>
-        <div className="container max-w-full mx-auto ">
+        <div id="all-products" className="container max-w-full mx-auto ">
           <div className="flex flex-col gap-6 ">
             <div className="text-black font-semibold text-lg md:text-xl xl:text-2xl">
               {categorySelected == null ? "Food Items" : categorySelected}

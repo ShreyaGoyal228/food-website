@@ -3,6 +3,9 @@ import { BsHandbag } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 import useStore from "@/store/cartStore";
+import SearchBar from "./searchbar";
+import { Suspense } from "react";
+import SearchBarSkeleton from "../skeleton/search-bar-skeleton";
 export default function Navbar() {
   const { cart } = useStore();
   const cartItems = cart.reduce((total, item) => {
@@ -31,8 +34,10 @@ export default function Navbar() {
             </Link>
 
             {/* cart and profile icon */}
-            <div className="relative flex items-center gap-6 ">
-              {/* <CiUser className="size-6" strokeWidth={1.1} /> */}
+            <div className="relative flex items-center gap-3 md:gap-10 ">
+              <Suspense fallback={<SearchBarSkeleton/>}>
+                <SearchBar />
+              </Suspense>
               <Link href="/cart">
                 <BsHandbag className="size-[18px] lg:size-[20px]" />
               </Link>
