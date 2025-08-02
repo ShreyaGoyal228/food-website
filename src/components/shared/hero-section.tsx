@@ -7,6 +7,7 @@ export default function HeroSection() {
           autoPlay
           muted
           loop
+          playsInline
           preload="auto"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -14,9 +15,8 @@ export default function HeroSection() {
         <div className="text-center text-white font-bold text-[28px] sm:text-3xl md:text-4xl lg:text-5xl px-8 sm:px-[50px] md:px-[200px] lg:px-[260px] xl:px-[400px] relative py-[110px] md:py-[170px]  ">
           From Our <span className="text-[#FF4A22]">Kitchen</span> to Your{" "}
           {/* <span className="border-b-2 border-[#149C47] rounded-t-lg"> */}
-            Doorstep
-          {/* </span> */}
-          .
+          Doorstep
+          {/* </span> */}.
         </div>
 
         <div className="whitespace-nowrap text-center bg-white rounded-[18px] absolute top-[95%] left-1/2 -translate-x-[50%] pt-3 lg:pt-[19px] pb-[5px] px-[58px] md:px-[80px] lg:px-[131px] text-[#FF4A22] text-sm md:text-base lg:text-xl font-bold">
