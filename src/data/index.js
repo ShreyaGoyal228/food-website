@@ -56,24 +56,6 @@ export const foodProducts = [
 
   // Meat & Seafood
   {
-    item_id: 4,
-    item_image:
-      "https://images.pexels.com/photos/618773/pexels-photo-618773.jpeg",
-    item_name: "Premium Ground Beef - 1lb",
-    original_price: 250,
-    discounted_price: 230,
-    discount: 20,
-    in_stock: true,
-    out_of_stock: false,
-    category: "Meat & Seafood",
-    description: "Fresh 85/15 ground beef, perfect for burgers and tacos",
-    rating: 4.6,
-    reviews: 298,
-    preparation_time: "Cook thoroughly",
-    restaurant: "Prime Butcher",
-    tags: ["fresh", "protein", "versatile"],
-  },
-  {
     item_id: 5,
     item_image:
       "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg",
